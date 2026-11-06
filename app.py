@@ -8,19 +8,39 @@ HTML = """
 <html>
 <head>
     <title>File Type Mismatch Detector</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e3a5f);
+        color: white;
+        text-align: center;
+        padding: 50px;
+    }
+
+    h1 {
+        color: #38bdf8;
+        font-size: 36px;
+    }
+</style>
 </head>
 <body>
-    <h1>File Type Mismatch Detector</h1>
-    <p>Upload a file to check its actual type.</p>
+    <h1>🛡️ File Type Mismatch Detector</h1>
+    <p style="font-size: 18px; color: #cbd5e1;">
+    Upload a file to check its actual type and extension.
+</p>
 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Check File</button>
+    <div style="background: #1e293b; padding: 30px; border-radius: 15px; max-width: 550px; margin: 30px auto; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+<form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required style="padding: 12px; color: white; margin-bottom: 20px;">
+        <button type="submit" style="background: #0ea5e9; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+    Check File
+</button>
     </form>
+    </div>
 
     {% if result %}
-        <h2>{{ result }}</h2>
-        <p>{{ message }}</p>
+        <h2 style="color: #38bdf8; margin-top: 25px;">{{ result }}</h2>
+        <p style="color: #cbd5e1; font-size: 17px;">{{ message }}</p>
     {% endif %}
 </body>
 </html>
